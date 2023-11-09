@@ -1,0 +1,25 @@
+{
+  "name": "custom-input",
+  "version": "1.0.0",
+  "description": "Example of building a custom input for Shiny",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.tsx --bundle --outfile=dist/index.js",
+    "watch": "npm run build -- --watch"
+  },
+  "author": "Nick Strayer",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react-dom": "^18.2.15",
+    "@types/rstudio-shiny": "git+https://github.com/rstudio/shiny#v1.7.4",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "esbuild": "0.19.5",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "downshift": "^8.2.3",
+    "lit": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
