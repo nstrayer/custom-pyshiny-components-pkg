@@ -1,3 +1,5 @@
+# pyright: basic
+
 # Example of building a custom output binding for PyShiny. This example
 # demonstrates the use of HTMLDependency to include external javascript and css
 # files directly in the output element instead of requiring them to be included
@@ -15,7 +17,7 @@ app_ui = ui.page_fluid(
 )
 
 
-def server(input):
+def server(input, output, session):
     @render.text
     def valueOut():
         return f"Value from input is {input.myInput()}"
