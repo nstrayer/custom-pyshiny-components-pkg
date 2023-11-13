@@ -1,7 +1,7 @@
 {
   "name": "custom-component-pkg-template",
   "version": "1.0.0",
-  "description": "Demo of custom JS components for PyShiny",
+  "description": "Demo of custom JS components for Shiny for python",
   "main": "index.js",
   "scripts": {
     "build": "esbuild srcts/index.ts --bundle --outfile=customShinyComponents/distjs/index.js",
