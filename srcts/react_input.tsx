@@ -11,7 +11,7 @@ const customInputTag = "custom-react-input";
  * all the dependencies and logic for the react component and only expose a
  * simple HTML tag interface to Shiny.
  */
-class ShinyReactComponent extends HTMLElement {
+export class ShinyReactComponent extends HTMLElement {
   /**
    * The current value of the input.
    */

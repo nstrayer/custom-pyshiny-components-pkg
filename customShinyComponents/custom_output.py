@@ -1,5 +1,6 @@
 # from pathlib import Path
-from htmltools import HTMLDependency, Tag
+from htmltools import Tag
+from .html_dep import custom_component_deps
 
 
 from shiny.render.transformer import (
@@ -9,10 +10,6 @@ from shiny.render.transformer import (
     ValueFn,
 )
 from shiny.module import resolve_id
-from pathlib import PurePath
-
-
-dist_path = PurePath(__file__).parent / "custom-output/dist"
 
 
 @output_transformer()
@@ -34,15 +31,6 @@ async def render_custom_output(
     return {"value": res}
 
 
-custom_output_deps = HTMLDependency(
-    "shiny-custom-output",
-    "1.0.0",
-    source={"package": "customShinyComponents", "subdir": str(dist_path)},
-    script={"src": "index.js", "type": "module"},
-    all_files=True,
-)
-
-
 def output_custom_output(id, height="200px"):
     """
     A shiny output. To be paired with
@@ -50,7 +38,7 @@ def output_custom_output(id, height="200px"):
     """
     return Tag(
         "shiny-custom-output",
-        custom_output_deps,
+        custom_component_deps,
         # Use resolve_id so that our component will work in a module
         id=resolve_id(id),
     )

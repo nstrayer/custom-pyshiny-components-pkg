@@ -25,8 +25,14 @@
     "noImplicitOverride": true,
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "plugins": [
+      {
+        "name": "ts-lit-plugin",
+        "strict": true
+      }
+    ]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/index.tsx"],
+  "include": ["srcts/**/*.ts", "srcts/**/*.tsx", "srcts/*.tsx"],
   "exclude": []
 }
