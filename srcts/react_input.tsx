@@ -3,7 +3,15 @@ import { addStylesForTag } from "./addStylesForTag";
 import { SketchPicker } from "react-color";
 import type { ColorResult } from "react-color";
 import React from "react";
+
 const customInputTag = "custom-react-input";
+
+const styleTag = `${customInputTag} {
+  display: block;
+  border: solid 1px gray;
+  padding: 16px;
+  width: fit-content;
+}`;
 
 /**
  * A webcomponent that wraps a react component. This is the component that
@@ -22,15 +30,7 @@ export class ShinyReactComponent extends HTMLElement {
   constructor() {
     super();
     // Add styles to the dom for this component
-    addStylesForTag(
-      customInputTag,
-      `${customInputTag} {
-          display: block;
-          border: solid 1px gray;
-          padding: 16px;
-          width: fit-content;
-        }`
-    );
+    addStylesForTag(customInputTag, styleTag);
   }
 
   /**

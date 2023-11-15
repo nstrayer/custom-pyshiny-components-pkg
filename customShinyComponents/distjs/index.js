@@ -29162,9 +29162,6 @@
     subscribe(el, callback) {
       el.onChangeCallback = callback;
     }
-    unsubscribe(el) {
-      el.onChangeCallback = null;
-    }
   };
   Shiny.inputBindings.register(new CustomInputBinding(), customInputTag);
 

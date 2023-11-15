@@ -70,10 +70,6 @@ class CustomInputBinding extends Shiny.InputBinding {
     // should check for the latest value.
     el.onChangeCallback = callback;
   }
-
-  override unsubscribe(el: ShinyCustomInput): void {
-    el.onChangeCallback = null;
-  }
 }
 
 Shiny.inputBindings.register(new CustomInputBinding(), customInputTag);
